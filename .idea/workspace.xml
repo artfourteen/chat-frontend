@@ -2,27 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f4594d-a3bd-4a6a-803d-e6a5612dc7ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/not-found.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/r/[roomId]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/register/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/helpers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/badge.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/label-input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/label.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/logo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user-settings/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user-settings/model/settings-modal-context.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user-settings/model/use-settings-modal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user-settings/ui/settings-button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user-settings/ui/settings-modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/settings-modal-provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/ui/avatar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/window.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/login/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/register/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/register/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/label-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/label-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/logo.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,28 +45,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "javascript.preferred.runtime.type.id": "node",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "C:/Users/armat/projects/chat/frontend/src/app",
-    "nodejs_package_manager_path": "pnpm",
-    "settings.editor.selected.configurable": "Settings.Biome",
-    "ts.external.directory.path": "C:\\Users\\armat\\projects\\chat\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/armat/projects/chat/frontend/src/app&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\armat\\projects\\chat\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\armat\projects\chat\frontend\src\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\armat\projects\chat\frontend\src\features\user-settings" />
+      <recent name="C:\Users\armat\projects\chat\frontend\src\app\(auth)" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -98,7 +103,8 @@
       <option name="presentableId" value="Default" />
       <updated>1783673005582</updated>
       <workItem from="1783673007509" duration="1868000" />
-      <workItem from="1783674911933" duration="15549000" />
+      <workItem from="1783674911933" duration="15676000" />
+      <workItem from="1783693693911" duration="10168000" />
     </task>
     <servers />
   </component>

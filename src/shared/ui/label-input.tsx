@@ -21,7 +21,12 @@ export const LabelInput = ({
   return (
     <div className="flex flex-col gap-1 w-full">
       <Label htmlFor={id}>{label}</Label>
-      <Input id={id} type={type} autoComplete={autoComplete} />
+      <Input
+        variant="default"
+        id={id}
+        type={type}
+        autoComplete={autoComplete}
+      />
     </div>
   );
 };

@@ -62,6 +62,7 @@
 
   --radius-chip: 10px;
   --radius-input: 14px;
+  --radius-user-card: 18px;
   --radius-card: 28px;
   --radius-bubble: 26px;
   --radius-pill: 999px;
@@ -98,6 +99,16 @@
     to right,
     var(--color-primary-500),
     var(--color-apricot-500)
+  );
+  --background-image-avatar-1: linear-gradient(
+    to bottom right,
+    var(--color-accent-500),
+    var(--color-apricot-500)
+  );
+  --background-image-avatar-2: linear-gradient(
+    to bottom right,
+    var(--color-apricot-400),
+    var(--color-pink-500)
   );
 }
 

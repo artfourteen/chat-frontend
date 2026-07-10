@@ -7,7 +7,7 @@ export const Logo = ({ className, ...props }: ComponentProps<"div">) => {
   return (
     <div
       className={cn(
-        "w-12 h-12 flex items-center justify-center rounded-full text-white bg-sunset-gradient shadow-brand-glow",
+        "size-12 flex items-center justify-center rounded-full text-white bg-sunset-gradient shadow-brand-glow shrink-0",
         className,
       )}
       {...props}
