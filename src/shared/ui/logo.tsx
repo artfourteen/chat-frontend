@@ -1,0 +1,18 @@
+import { Chatting01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import type { ComponentProps } from "react";
+import { cn } from "@/shared/helpers";
+
+export const Logo = ({ className, ...props }: ComponentProps<"div">) => {
+  return (
+    <div
+      className={cn(
+        "w-12 h-12 flex items-center justify-center rounded-full text-white bg-sunset-gradient shadow-brand-glow",
+        className,
+      )}
+      {...props}
+    >
+      <HugeiconsIcon icon={Chatting01Icon} strokeWidth={2} />
+    </div>
+  );
+};
