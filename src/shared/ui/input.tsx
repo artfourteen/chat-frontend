@@ -8,6 +8,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type ComponentProps, useState } from "react";
+import { cn } from "@/shared/helpers";
 
 const inputVariants = cva(
   "w-full text-foreground text-body leading-heading outline-none focus:border-primary-500 ring-0 focus:ring-3 ring-primary-100 transition-all",
@@ -25,19 +26,29 @@ const inputVariants = cva(
   },
 );
 
+interface InputProps extends ComponentProps<"input"> {
+  parentClassName?: string;
+}
+
 export const Input = ({
   className,
+  parentClassName,
   variant,
   type,
   ...props
-}: ComponentProps<"input"> & VariantProps<typeof inputVariants>) => {
+}: InputProps & VariantProps<typeof inputVariants>) => {
   const [isShown, setIsShown] = useState(false);
 
   switch (variant) {
     case "default":
       if (variant === "default" && type === "password") {
         return (
-          <div className="relative">
+          <div
+            className={cn(
+              "relative transition-all hover:scale-102 active:scale-100 duration-100",
+              parentClassName,
+            )}
+          >
             <input
               type={isShown ? "text" : "password"}
               className={inputVariants({ variant, className })}
@@ -60,17 +71,25 @@ export const Input = ({
       return (
         <input
           type={type}
-          className={inputVariants({ variant, className })}
+          className={cn(
+            "duration-100 hover:scale-102 active:scale-100",
+            inputVariants({ variant, className }),
+          )}
           {...props}
         />
       );
     case "search":
       return (
-        <div className="relative">
+        <div
+          className={cn(
+            "relative transition-all hover:scale-102 active:scale-100 duration-100",
+            parentClassName,
+          )}
+        >
           <HugeiconsIcon
             icon={Search01Icon}
             size={16}
-            className="text-muted-foreground absolute left-4 top-1/2 -translate-y-1/2"
+            className="z-10 pointer-events-none text-muted-foreground absolute left-4 top-1/2 -translate-y-1/2"
           />
           <input
             type={type}

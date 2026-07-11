@@ -6,8 +6,10 @@ import {
   Setting07Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { useState } from "react";
 import { UserAvatar } from "@/entities/user";
 import { useSettingsModal } from "@/features/user-settings/model/use-settings-modal";
+import { cn } from "@/shared/helpers";
 import { Button } from "@/shared/ui/button";
 import {
   Dropdown,
@@ -17,14 +19,21 @@ import {
 } from "@/shared/ui/dropdown/dropdown";
 
 export const UserDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const { open } = useSettingsModal();
 
   return (
-    <Dropdown>
+    <Dropdown open={isOpen} onOpenChange={setIsOpen}>
       <DropdownTrigger asChild>
         <Button variant="outline" className="p-1 pr-2 h-auto shadow-md gap-1">
           <UserAvatar size="sm" username="art14" />
-          <HugeiconsIcon size="16" icon={ArrowDown01Icon} />
+          <HugeiconsIcon
+            size="16"
+            icon={ArrowDown01Icon}
+            className={cn("transition-all duration-100", {
+              "rotate-180": isOpen,
+            })}
+          />
         </Button>
       </DropdownTrigger>
       <DropdownContent>

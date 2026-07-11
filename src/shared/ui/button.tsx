@@ -4,7 +4,7 @@ import type { ComponentProps } from "react";
 import { cn } from "@/shared/helpers";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-pill hover:opacity-90 transition-all active:opacity-100 font-semibold",
+  "inline-flex items-center justify-center rounded-pill hover:opacity-90 transition-all active:opacity-100 font-semibold hover:scale-102 active:scale-100",
   {
     variants: {
       variant: {

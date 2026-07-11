@@ -94,9 +94,9 @@ export const DropdownContent = ({
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
-          transition={{ duration: 0.11 }}
+          transition={{ duration: 0.1 }}
           className={cn(
-            "absolute left-0 top-full z-50 mt-2 min-w-40 bg-white shadow-popover rounded-user-card p-1 space-y-1",
+            "absolute right-0 top-full z-50 mt-2 min-w-40 bg-white shadow-popover rounded-user-card p-1 space-y-1",
             className,
           )}
         >

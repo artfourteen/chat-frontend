@@ -18,7 +18,7 @@ export const OpenDMButton = ({ id, username }: OpenChatButtonProps) => {
     <Link
       href={`/r/${id}`}
       className={cn(
-        "flex items-center hover:bg-gray-100 py-2.5 px-3 rounded-user-card transition-all gap-3",
+        "flex items-center hover:bg-gray-100 hover:scale-102 active:scale-101 py-2.5 px-3 rounded-user-card transition-all gap-3",
         { "bg-primary-50 hover:bg-primary-50": roomId === id },
       )}
     >

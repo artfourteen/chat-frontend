@@ -48,13 +48,14 @@ export const SettingsModal = ({ open = true }: SettingsModalProps) => {
                 </div>
               </div>
 
-              <button
-                type="button"
-                className="text-muted-foreground hover:text-foreground transition-colors self-start"
+              <Button
+                variant="ghost"
+                size="icon"
+                className="self-start hover:rotate-90 hover:scale-105"
                 onClick={close}
               >
                 <HugeiconsIcon icon={Cancel01Icon} size="16" />
-              </button>
+              </Button>
             </div>
 
             <LabelInput
