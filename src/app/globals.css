@@ -102,13 +102,43 @@
   );
   --background-image-avatar-1: linear-gradient(
     to bottom right,
-    var(--color-accent-500),
-    var(--color-apricot-500)
+    var(--color-pink-500),
+    var(--color-apricot-400)
   );
   --background-image-avatar-2: linear-gradient(
     to bottom right,
     var(--color-apricot-400),
     var(--color-pink-500)
+  );
+  --background-image-avatar-3: linear-gradient(
+    to bottom right,
+    var(--color-pink-500),
+    var(--color-accent-600)
+  );
+  --background-image-avatar-4: linear-gradient(
+    to bottom right,
+    var(--color-primary-500),
+    var(--color-accent-500)
+  );
+  --background-image-avatar-5: linear-gradient(
+    to bottom right,
+    var(--color-violet-500),
+    var(--color-primary-400)
+  );
+  --background-image-avatar-6: linear-gradient(
+    to bottom right,
+    var(--color-amber-400),
+    var(--color-primary-600)
+  );
+  --background-image-avatar-7: linear-gradient(
+    to bottom right,
+    var(--color-fuchsia-500),
+    var(--color-accent-700)
+  );
+  --background-image-avatar-8: linear-gradient(
+    to bottom right,
+    var(--color-apricot-500),
+    var(--color-violet-500)
   );
 }
 

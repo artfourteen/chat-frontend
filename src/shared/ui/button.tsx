@@ -14,7 +14,8 @@ const buttonVariants = cva(
           "text-accent-600 [&>svg]:text-accent-600 bg-accent-100 hover:opacity-80",
         outline:
           "text-muted-foreground [&>svg]:text-muted-foreground border-1 border-black/10 hover:opacity-80",
-        ghost: "",
+        ghost:
+          "text-muted-foreground [&>svg]:text-muted-foreground hover:bg-gray-100",
         destructive:
           "text-danger [&>svg]:text-danger bg-danger/10 hover:opacity-80",
         disabled:
