@@ -10,8 +10,8 @@ import {
   useRef,
   useState,
 } from "react";
-import { cn } from "@/shared/helpers";
 import { useClickOutside } from "@/shared/hooks";
+import { cn } from "@/shared/lib";
 import { DropdownContext, useDropdown } from "./dropdown-context";
 
 interface DropdownProps {

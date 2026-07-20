@@ -1,7 +1,9 @@
+import { Loading03Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentProps } from "react";
-import { cn } from "@/shared/helpers";
+import { cn } from "@/shared/lib";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-pill hover:opacity-90 transition-all active:opacity-100 font-semibold hover:scale-102 active:scale-100",
@@ -39,21 +41,38 @@ const buttonVariants = cva(
 
 interface ButtonProps extends ComponentProps<"button"> {
   asChild?: boolean;
+  isPending?: boolean;
 }
 
 export const Button = ({
   className,
   type,
   asChild,
+  isPending,
   variant = "default",
   size = "default",
+  children,
+  disabled,
   ...props
 }: ButtonProps & VariantProps<typeof buttonVariants>) => {
   const Comp = asChild ? Slot : "button";
   return (
     <Comp
-      className={cn(buttonVariants({ variant, size, className }))}
+      disabled={variant === "disabled" || isPending ? true : disabled}
+      className={cn(
+        buttonVariants({
+          variant: isPending ? "disabled" : variant,
+          size,
+          className,
+        }),
+      )}
       {...props}
-    />
+    >
+      {isPending ? (
+        <HugeiconsIcon icon={Loading03Icon} className="animate-spin" />
+      ) : (
+        children
+      )}
+    </Comp>
   );
 };

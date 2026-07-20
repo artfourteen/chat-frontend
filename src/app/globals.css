@@ -140,6 +140,11 @@
     var(--color-apricot-500),
     var(--color-violet-500)
   );
+  --background-image-auth: linear-gradient(
+    to bottom right,
+    var(--color-apricot-100),
+    var(--color-accent-100)
+  );
 }
 
 @layer base {
@@ -147,4 +152,8 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+}
+
+[data-sonner-toast] [data-title]::first-letter {
+  text-transform: uppercase;
 }

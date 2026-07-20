@@ -8,16 +8,19 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type ComponentProps, useState } from "react";
-import { cn } from "@/shared/helpers";
+import { cn } from "@/shared/lib";
 
 const inputVariants = cva(
-  "w-full text-foreground text-body leading-heading outline-none focus:border-primary-500 ring-0 focus:ring-3 ring-primary-100 transition-all",
+  "w-full text-foreground text-body leading-heading outline-none transition-all",
   {
     variants: {
       variant: {
-        default: "py-2.75 px-3.75 rounded-input border border-black/10",
+        default:
+          "py-2.75 px-3.75 rounded-input border border-black/10 focus:border-primary-500 ring-0 focus:ring-3 ring-primary-100",
         search:
-          "text-body bg-accent-50 px-2.5 py-4 pl-10 rounded-pill text-foreground placeholder:text-muted-foreground",
+          "text-body bg-accent-50 px-2.5 py-4 pl-10 rounded-pill text-foreground placeholder:text-muted-foreground focus:border-primary-500 ring-0 focus:ring-3 ring-primary-100",
+        message:
+          "px-5 py-5 bg-white text-foreground placeholder-text-muted-foreground border-t border-black/5",
       },
     },
     defaultVariants: {
@@ -33,7 +36,7 @@ interface InputProps extends ComponentProps<"input"> {
 export const Input = ({
   className,
   parentClassName,
-  variant,
+  variant = "default",
   type,
   ...props
 }: InputProps & VariantProps<typeof inputVariants>) => {
@@ -41,7 +44,7 @@ export const Input = ({
 
   switch (variant) {
     case "default":
-      if (variant === "default" && type === "password") {
+      if (type === "password") {
         return (
           <div
             className={cn(
@@ -97,6 +100,14 @@ export const Input = ({
             {...props}
           />
         </div>
+      );
+    case "message":
+      return (
+        <input
+          type={type}
+          className={inputVariants({ variant, className })}
+          {...props}
+        />
       );
   }
 };

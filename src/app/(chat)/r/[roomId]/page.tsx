@@ -1,3 +1,7 @@
+"use client";
+
+import { ChatRoom } from "@/widgets/chat";
+
 export default function RoomPage() {
-  return <main>RoomPage</main>;
+  return <ChatRoom username="alice" />;
 }

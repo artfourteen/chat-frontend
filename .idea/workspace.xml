@@ -2,13 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f4594d-a3bd-4a6a-803d-e6a5612dc7ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/features/auth/api/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/api/queries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/model/schemas.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/model/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/ui/login-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/ui/logout-headless.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/ui/register-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user-settings/model/schemas.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user-settings/ui/update-profile-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user/api/queries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user/api/user.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/user/model/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/proxy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/api/client.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/api/cookies.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/api/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/widgets/auth/ui/auth-template.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(auth)/register/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(auth)/register/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(chat)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(chat)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(chat)/r/[roomId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(chat)/r/[roomId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/user/ui/user-avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/user/ui/user-avatar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/open-dm/ui/open-dm-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/open-dm/ui/open-dm-button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/user-dropdown/ui/dropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user-dropdown/ui/dropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/user-settings/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user-settings/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/user-settings/ui/settings-dropdown.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/user-settings/ui/settings-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/user-settings/ui/settings-modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/providers/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/helpers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/badge.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/ui/dropdown/dropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/dropdown/dropdown.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/label-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/label-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/label.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/chat/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/chat/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +135,13 @@
       <workItem from="1783674911933" duration="15676000" />
       <workItem from="1783693693911" duration="10318000" />
       <workItem from="1783745567091" duration="1566000" />
-      <workItem from="1783770659944" duration="11741000" />
+      <workItem from="1783770659944" duration="11818000" />
+      <workItem from="1783785881605" duration="366000" />
+      <workItem from="1783791855226" duration="1546000" />
+      <workItem from="1784458085414" duration="15029000" />
+      <workItem from="1784523888614" duration="9651000" />
+      <workItem from="1784572128544" duration="2485000" />
+      <workItem from="1784574838623" duration="6904000" />
     </task>
     <servers />
   </component>

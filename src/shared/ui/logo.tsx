@@ -1,7 +1,7 @@
 import { Chatting01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import type { ComponentProps } from "react";
-import { cn } from "@/shared/helpers";
+import { cn } from "@/shared/lib";
 
 export const Logo = ({ className, ...props }: ComponentProps<"div">) => {
   return (

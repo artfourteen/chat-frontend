@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/providers";
-import { cn } from "@/shared/helpers";
+import { cn } from "@/shared/lib";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const outfit = Outfit({
   subsets: ["latin"],

@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { cn } from "@/shared/helpers";
+import { cn } from "@/shared/lib";
 
 export const Label = ({ className, ...props }: ComponentProps<"label">) => {
   return (

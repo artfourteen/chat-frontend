@@ -34,7 +34,7 @@ const userAvatarVariants = cva(
 );
 
 interface UserAvatarProps extends ComponentProps<"div"> {
-  username: string;
+  username?: string;
 }
 
 export const UserAvatar = ({
@@ -44,7 +44,7 @@ export const UserAvatar = ({
   username,
   ...props
 }: UserAvatarProps & VariantProps<typeof userAvatarVariants>) => {
-  const avatarColor = color ?? getAvatarColor(username);
+  const avatarColor = color ?? getAvatarColor(username ?? "");
 
   return (
     <div
@@ -55,7 +55,7 @@ export const UserAvatar = ({
       })}
       {...props}
     >
-      {username.slice(0, 2)}
+      {username?.slice(0, 2)}
     </div>
   );
 };

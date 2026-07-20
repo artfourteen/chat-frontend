@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { UserAvatar } from "@/entities/user";
-import { cn } from "@/shared/helpers";
+import { cn } from "@/shared/lib";
 
 type OpenChatButtonProps = {
   id: string;

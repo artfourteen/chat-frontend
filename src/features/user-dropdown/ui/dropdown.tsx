@@ -8,8 +8,10 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useState } from "react";
 import { UserAvatar } from "@/entities/user";
+import { LogoutHeadless } from "@/features/auth";
+import { useGetMe } from "@/features/user";
 import { useSettingsModal } from "@/features/user-settings/model/use-settings-modal";
-import { cn } from "@/shared/helpers";
+import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui/button";
 import {
   Dropdown,
@@ -21,12 +23,16 @@ import {
 export const UserDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { open } = useSettingsModal();
+  const { data, isPending } = useGetMe();
 
   return (
     <Dropdown open={isOpen} onOpenChange={setIsOpen}>
       <DropdownTrigger asChild>
-        <Button variant="outline" className="p-1 pr-2 h-auto shadow-md gap-1">
-          <UserAvatar size="sm" username="art14" />
+        <Button
+          variant="outline"
+          className="p-1 pr-2 h-auto shadow-md gap-1 bg-white"
+        >
+          <UserAvatar size="sm" username={data?.username} />
           <HugeiconsIcon
             size="16"
             icon={ArrowDown01Icon}
@@ -44,14 +50,16 @@ export const UserDropdown = () => {
           </Button>
         </DropdownItem>
         <DropdownItem asChild>
-          <Button variant="destructive" className="w-full gap-1">
-            <HugeiconsIcon
-              size="16"
-              strokeWidth={2.5}
-              icon={LogoutSquare01Icon}
-            />
-            <span>Log out</span>
-          </Button>
+          <LogoutHeadless>
+            <Button variant="destructive" className="w-full gap-1">
+              <HugeiconsIcon
+                size="16"
+                strokeWidth={2.5}
+                icon={LogoutSquare01Icon}
+              />
+              <span>Log out</span>
+            </Button>
+          </LogoutHeadless>
         </DropdownItem>
       </DropdownContent>
     </Dropdown>
