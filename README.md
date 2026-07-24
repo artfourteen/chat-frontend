@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chat — Frontend
 
-## Getting Started
+Real-time chat web client. Direct messages over REST + WebSocket, with auth, user profiles, and end-to-end-encrypted message frames (ciphertext + nonce sent over the socket).
 
-First, run the development server:
+## Tech Stack
+
+- **[Next.js 16](https://nextjs.org)** (App Router) + **React 19**
+- **TypeScript**
+- **Tailwind CSS 4** for styling
+- **TanStack Query** for server state / data fetching
+- **Axios** REST client, native **WebSocket** for live messages
+- **React Hook Form** + **Zod** for forms & validation
+- **Framer Motion** animations, **Sonner** toasts, **Base UI** / **Radix** primitives
+- **Biome** for lint & format
+- **pnpm** package manager
+
+## Architecture
+
+Follows **Feature-Sliced Design** (FSD). Source lives in `src/`:
+
+| Layer | Purpose |
+|-------|---------|
+| `app/` | Next.js routes, layouts, route groups (`(auth)`, `(chat)`) |
+| `providers/` | Global providers (query client, auth, modals) |
+| `widgets/` | Composite UI blocks (`sidebar`, `chat`, `auth`) |
+| `features/` | User actions (`auth`, `send-message`, `open-dm`, `user-settings`, `user-dropdown`) |
+| `entities/` | Domain models & API (`user`, `room`, `message`) |
+| `shared/` | Reusable UI, hooks, API client, WebSocket, cookies |
+
+## Prerequisites
+
+- **Node.js** 20+
+- **pnpm** (`npm install -g pnpm`)
+- Running backend API reachable at `NEXT_PUBLIC_API_URL` (exposes `/api/v1` REST + `/api/v1/ws` WebSocket)
+
+## Setup
+
+1. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+2. Create `.env.local` in the project root:
+
+   ```bash
+   NEXT_PUBLIC_API_URL=http://localhost:8080
+   ```
+
+   Point it at your backend. The WebSocket URL is derived automatically (`http` swapped for `ws`).
+
+## Run
+
+Development server (hot reload) at [http://localhost:3000](http://localhost:3000):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production build & serve:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm build
+pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command | Action |
+|---------|--------|
+| `pnpm dev` | Start dev server |
+| `pnpm build` | Production build |
+| `pnpm start` | Serve production build |
+| `pnpm lint` | Lint with Biome |
+| `pnpm format` | Format with Biome |
 
-To learn more about Next.js, take a look at the following resources:
+## How It Works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Auth** — login / register store an access token in cookies. Middleware (`src/proxy.ts`) redirects unauthenticated users to `/login` and logged-in users away from auth routes. A `401` clears the session and bounces to login.
+- **Messaging** — `shared/api/ws.ts` opens a WebSocket, authenticates with the token, and auto-reconnects with exponential backoff. Messages are sent as `{ ciphertext, nonce }` frames per room.
