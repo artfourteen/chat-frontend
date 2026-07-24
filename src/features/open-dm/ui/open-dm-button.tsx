@@ -2,15 +2,11 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import type { Room } from "@/entities/room";
 import { UserAvatar } from "@/entities/user";
 import { cn } from "@/shared/lib";
 
-type OpenChatButtonProps = {
-  id: string;
-  username: string;
-};
-
-export const OpenDMButton = ({ id, username }: OpenChatButtonProps) => {
+export const OpenDMButton = ({ id, username }: Room) => {
   const params = useParams();
   const roomId = params.roomId as string;
 

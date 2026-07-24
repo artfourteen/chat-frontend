@@ -1,2 +1,3 @@
+export { useGetRoomMessages } from "./api/queries";
+export type { Message, SendMessageRequest } from "./model/types";
 export { MessageBubble } from "./ui/message-bubble";
-export type { Message, MessageStatus } from "./model/types";

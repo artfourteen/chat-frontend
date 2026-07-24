@@ -1,11 +1,23 @@
+"use client";
+
+import { useGetRooms } from "@/entities/room";
 import { OpenDMButton } from "@/features/open-dm";
-import { users } from "@/widgets/sidebar/lib/mock";
 
 export const DMList = () => {
+  const { data: dms, isPending } = useGetRooms();
+
+  if (isPending) {
+    return "Loading...";
+  }
+
+  if (!dms || dms.length === 0) {
+    return "No dms found";
+  }
+
   return (
     <div className="flex flex-col gap-1">
-      {users.map((user) => (
-        <OpenDMButton key={user.id} {...user} />
+      {dms.map((dm) => (
+        <OpenDMButton key={dm.id} {...dm} />
       ))}
     </div>
   );

@@ -7,9 +7,8 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useState } from "react";
-import { UserAvatar } from "@/entities/user";
+import { UserAvatar, useGetMe } from "@/entities/user";
 import { LogoutHeadless } from "@/features/auth";
-import { useGetMe } from "@/features/user";
 import { useSettingsModal } from "@/features/user-settings/model/use-settings-modal";
 import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui/button";
@@ -23,7 +22,7 @@ import {
 export const UserDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { open } = useSettingsModal();
-  const { data, isPending } = useGetMe();
+  const { data } = useGetMe();
 
   return (
     <Dropdown open={isOpen} onOpenChange={setIsOpen}>

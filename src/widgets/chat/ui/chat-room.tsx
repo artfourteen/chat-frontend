@@ -1,18 +1,32 @@
+import { useParams } from "next/navigation";
+import { useGetRoomMessages } from "@/entities/message";
+import { useGetRoom } from "@/entities/room";
 import { MessageInput } from "@/features/send-message";
-import { MOCK_MESSAGES } from "@/widgets/chat/model/mock";
 import { ChatHeader } from "./chat-header";
 import { MessageList } from "./message-list";
 
-interface ChatRoomProps {
-  username: string;
-}
+export const ChatRoom = () => {
+  const params = useParams();
+  const roomId = params.roomId as string;
+  const { data: roomData, isPending: isRoomPending } = useGetRoom(roomId);
+  const { data: messagesData, isPending: isMessagesPending } =
+    useGetRoomMessages(roomId);
 
-export const ChatRoom = ({ username }: ChatRoomProps) => {
   return (
     <main className="flex flex-col h-dvh">
-      <ChatHeader username={username} online />
-      <MessageList messages={MOCK_MESSAGES} username={username} />
-      <MessageInput />
+      {isRoomPending || isMessagesPending ? (
+        "Loading..."
+      ) : !roomData ? (
+        "Room not found"
+      ) : !messagesData ? (
+        "no messages"
+      ) : (
+        <>
+          <ChatHeader username={roomData.username} />
+          <MessageList messages={messagesData} username={roomData.username} />
+        </>
+      )}
+      <MessageInput roomId={roomId} />
     </main>
   );
 };

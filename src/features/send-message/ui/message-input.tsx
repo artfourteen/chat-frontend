@@ -2,15 +2,30 @@
 
 import { SentIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { useState } from "react";
+import { type SyntheticEvent, useState } from "react";
+import { sendMessage } from "@/shared/api";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 
-export const MessageInput = () => {
+interface MessageInputProps {
+  roomId: string;
+}
+
+export const MessageInput = ({ roomId }: MessageInputProps) => {
   const [value, setValue] = useState("");
 
+  const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const text = value.trim();
+    if (!text) return;
+
+    // TODO crypto: text -> base64 ciphertext + nonce
+    const ok = sendMessage(roomId, text, "");
+    if (ok) setValue("");
+  };
+
   return (
-    <div className="flex items-center justify-center">
+    <form onSubmit={handleSubmit} className="flex items-center justify-center">
       <div className="relative w-full">
         <Input
           variant="message"
@@ -22,13 +37,14 @@ export const MessageInput = () => {
         />
 
         <Button
-          variant={value.length ? "default" : "disabled"}
+          type="submit"
+          variant={value.trim().length ? "default" : "disabled"}
           size="icon-lg"
           className="z-10 absolute right-4 top-1/2 -translate-y-1/2"
         >
           <HugeiconsIcon icon={SentIcon} size={16} className="text-white" />
         </Button>
       </div>
-    </div>
+    </form>
   );
 };

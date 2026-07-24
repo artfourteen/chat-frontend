@@ -1,7 +1,12 @@
+"use client";
+
 import type { PropsWithChildren } from "react";
+import { useChatSocket } from "@/shared/hooks";
 import { Sidebar } from "@/widgets/sidebar";
 
 export default function ChatLayout({ children }: PropsWithChildren) {
+  useChatSocket();
+
   return (
     <div className="h-dvh flex items-start">
       <Sidebar />

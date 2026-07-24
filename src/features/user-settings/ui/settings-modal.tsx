@@ -3,8 +3,7 @@
 import { Cancel01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { UserAvatar } from "@/entities/user";
-import { useGetMe } from "@/features/user";
+import { UserAvatar, useGetMe } from "@/entities/user";
 import { useSettingsModal } from "@/features/user-settings/model/use-settings-modal";
 import { UpdateProfileForm } from "@/features/user-settings/ui/update-profile-form";
 import { Button } from "@/shared/ui/button";

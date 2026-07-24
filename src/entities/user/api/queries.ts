@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { userService } from "@/features/user/api/user.service";
-import type { UpdateProfileRequest } from "@/features/user/model/types";
+import { userService } from "@/entities/user/api/user.service";
+import type { UpdateProfileRequest } from "@/entities/user/model/types";
 import { toastError } from "@/shared/lib";
 
 export const useGetMe = (enabled = true) =>

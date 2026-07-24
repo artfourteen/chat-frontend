@@ -21,7 +21,7 @@ const buttonVariants = cva(
         destructive:
           "text-danger [&>svg]:text-danger bg-danger/10 hover:opacity-80",
         disabled:
-          "cursor-not-allowed text-muted-foreground [&>svg]:text-muted-foreground bg-accent-100 opacity-60 hover:opacity-60 active:opacity-60",
+          "text-muted-foreground [&>svg]:text-muted-foreground bg-accent-100 opacity-60 hover:opacity-60 active:opacity-60 hover:scale-100",
       },
       size: {
         default: "text-[13px] h-8.5 py-2.25 px-4.5",

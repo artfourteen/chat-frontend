@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { PropsWithChildren } from "react";
-import { useGetMe } from "@/features/user";
+import { useGetMe } from "@/entities/user";
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const pathname = usePathname();
